@@ -2,77 +2,68 @@
 
 Welcome to the **DevOps Playground Scripts Repo** — a central place for all reusable scripts, automation helpers, and command-line tools used across our infrastructure, CI/CD, and containerization projects.
 
+This repository contains various scripts used across the DevOps Playground, organized by tools and technologies. These scripts are shared across teams for launching infrastructure, automating pipelines, managing containers, and more.
+
 ---
 
-## 📁 Structure
-
-All scripts are organized by topic or purpose in subdirectories:
+## 📁 Folder Structure
 
 ```
 
 scripts/
-├── infra/                  # Infrastructure-related scripts (Terraform, AWS CLI, etc.)
-├── cicd/                   # CI/CD helper scripts (Jenkins, GitHub Actions, etc.)
-├── containers/             # Docker/Kubernetes/Helm related scripts
-├── ansible/                # Ansible playbooks and patching automation
-├── monitoring/             # Prometheus, Grafana setups
-└── utils/                  # Misc utilities and helper tools
+├── terraform/        # Scripts and templates for AWS resources
+├── ansible/          # Patching and configuration automation
+├── docker/           # Build and container image helpers
+├── jenkins/          # Jenkins-specific pipeline and automation scripts
+├── sonarqube/        # Sonarqube automation scripts
+├── kubernetes/       # Scripts for deploying to and managing K8s clusters
+├── monitoring/       # Prometheus, Grafana, and alerting setup
+├── notifications/    # Sending notifications with or without attachments
+└── utils/            # Miscellaneous helper scripts
 
 ````
 
 ---
 
-## 🚀 Getting Started
+## 🧪 How to Use
 
-> These scripts are meant to be used as modular helpers for larger workflows, not full applications.
-
-### 🔧 Requirements
-
-- Bash or Zsh (Unix-based systems)
-- Terraform (if using infra scripts)
-- AWS CLI (if deploying to AWS)
-- Ansible (for patching)
-- Docker / kubectl / Helm (for container scripts)
-
-### ✅ Usage Example
-
-```bash
-# Example: Launch EC2 instance with user data
-cd scripts/infra
-chmod +x launch_ec2.sh
-./launch_ec2.sh
+1. Navigate to the appropriate tool folder.
+2. Ensure the script is executable:
+   ```bash
+   chmod +x script-name.sh
 ````
 
----
+3. Run the script:
 
-## 📦 Available Scripts
-
-| Category      | Description                                           |
-| ------------- | ----------------------------------------------------- |
-| `infra/`      | Launch EC2, patch with Ansible, deploy with Terraform |
-| `cicd/`       | CI/CD pipeline scripts, parameter injection           |
-| `containers/` | Helm install, Docker build/push, K8s deploy           |
-| `ansible/`    | Patch EC2 instances, install packages                 |
-| `monitoring/` | Install Prometheus, Grafana                           |
-| `utils/`      | Misc: cleanup, validate, common ops                   |
+   ```bash
+   ./script-name.sh
+   ```
 
 ---
 
-## ✍️ Contributing
+## 🛠 Examples
 
-We encourage contributions from all teams!
-
-1. Follow the folder structure.
-2. Use descriptive names and shebangs (`#!/bin/bash`).
-3. Include inline comments and `README.md` if needed inside your folder.
-4. Test before pushing.
+| Folder           | Sample Use Case                                 |
+| ---------------- | ----------------------------------------------- |
+| `terraform/`     | Launch EC2 instances, create VPCs, EKS clusters |
+| `ansible/`       | Patch EC2 instances after deployment            |
+| `docker/`        | Build and push Docker images                    |
+| `jenkins/`       | Inject parameters or call reusable steps        |
+| `kubernetes/`    | Deploy apps using kubectl or Helm               |
+| `monitoring/`    | Set up Prometheus + Grafana                     |
+| `notifications/` | Send email alerts with or without attachments   |
 
 ---
 
-## 🙋‍♂️ Maintainers
+## 🤝 Contribution Guidelines
 
-This repo is maintained by the **DevOps Playground Volunteer Team**.
+* Keep scripts modular and well-commented.
+* Include a short description at the top of each script.
+* Use folders based on the tool, not the task.
+* Test locally before committing.
 
-* Infra & Cloud
-* CI/CD & Automation
-* Container & Orchestration
+---
+
+## 🙋 Maintainers
+
+This repository is maintained by the **DevOps Playground volunteer team** across various working groups.
